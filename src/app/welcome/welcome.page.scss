@@ -1,0 +1,47 @@
+ion-content {
+  height: 100%; // Ensure ion-content takes full height
+
+  swiper-container {
+    --swiper-pagination-color: var(--ion-color-primary);
+    height: 100%; // Ensure the swiper-container fills the height
+
+    div {
+      height: 100%; // Ensure each slide fills the height
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+// Styles for active bullet
+swiper-container::part(bullet-active) {
+  margin-right: 1vh; // Adjust margin to space bullets horizontally
+  width: 40px;
+  border-radius: 4px;
+}
+
+// Styles for inactive bullet
+swiper-container::part(bullet) {
+  margin-right: 1vh; // Adjust margin to space bullets horizontally
+  width: 15px;
+  border-radius: 2px;
+  background: #fff;
+  opacity: 1;
+}
+
+// Footer styles
+ion-footer {
+  ion-toolbar {
+    --background: #00000000; // Set toolbar background color
+    padding-left: 10px;
+    padding-right: 10px;
+
+    ion-button {
+      ion-text {
+        font-size: 1rem; // Set font size for button text
+        letter-spacing: 0.1rem;
+      }
+    }
+  }
+}

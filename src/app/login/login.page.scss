@@ -1,0 +1,73 @@
+
+ion-toolbar{
+  --background: #212529; // Dark background
+
+}
+ion-content {
+  --background: #212529; // Dark background
+ion-text{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  margin-left: 70px;
+  margin-top: 20px;
+  font-size: 0.92em;
+
+}
+
+
+  ion-item {
+    margin: 30px;
+    --background: #1d1e1fb3;
+  }
+  ion-button {
+    --background:#b82b2b;
+    --color: #fff;
+    --border-radius: 8px;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    margin-top: 70px;
+    margin-left:30px ;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+
+
+    &:focus {
+      --box-shadow: none;
+    }
+  }
+  .custom-input {
+    background: #e2e5ef;  // Adjust to the desired background color
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 0.92em;
+
+
+    ion-icon {
+      color: #ffffff;  // Icon color
+      font-size: 1.2em;
+    }
+
+    ion-input {
+      color: #ffffff;  // Text color
+      padding-left: 10px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    }
+  }
+
+  .logo-img {
+    width: 96px;
+    height: 96px;
+    display: block;
+    margin: 60px auto;
+  }
+
+  .logo-shadow {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    box-shadow: 0px 1px 12px rgb(180, 227, 250); /* Adjust shadow as needed */
+    border-radius: 22px; /* Optional: for rounded corners */
+  }
+
+
+  // ...other styles for the logo, forgot password link, etc.
+}

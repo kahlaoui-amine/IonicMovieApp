@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon style="color: #b82b2b;" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="../../assets/icon/netflix.png" class="logo-img logo-shadow"></ion-img>
+
+<ion-content>
+  <ion-item class="custom-input">
+    <ion-icon name="person-outline" slot="start"></ion-icon>
+    <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item class="custom-input">
+    <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+    <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
+
+  <ion-button expand="block" (click)="login()">LOGIN</ion-button>
+
+  <ion-text>
+    <ion-text routerLink="/register" style="color: #b82b2b;">
+      Don't have an account? <span style="color: aqua;">SIGN UP</span>
+    </ion-text>
+  </ion-text>
+</ion-content>
