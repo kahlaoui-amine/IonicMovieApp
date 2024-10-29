@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.authService.isAuthenticated().subscribe(isAuthenticated => {
       if (!isAuthenticated) {
-        this.router.navigate(['/login'], { replaceUrl: true });
+        this.router.navigate([''], { replaceUrl: true });
       }
     });
   }

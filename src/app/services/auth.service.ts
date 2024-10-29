@@ -33,7 +33,7 @@ export class AuthService {
 
   async logout() {
     await this.afAuth.signOut();
-    this.router.navigate(['/login'], { replaceUrl: true });
+    this.router.navigate([''], { replaceUrl: true });
   }
 
 
