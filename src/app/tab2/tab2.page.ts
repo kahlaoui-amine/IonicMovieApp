@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { forkJoin } from 'rxjs';
 import { ThemoviedbService } from '../projects/api/service/themoviedb.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service'; // Update path as necessary
 
 @Component({
   selector: 'app-tab2',
@@ -11,6 +13,8 @@ export class Tab2Page implements OnInit {
   /** Only the modelType is different from tab1 */
   modelType = 'tv';
 
+
+
   sliderContainer: any = [];
   genreContainerList: any = [];
   page: number;
@@ -19,7 +23,7 @@ export class Tab2Page implements OnInit {
   appCardContainer: any = [];
   loadingCurrentEventData: any;
 
-  constructor(private service: ThemoviedbService) { }
+  constructor(private service: ThemoviedbService,private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.initializeSliderContainer();
@@ -27,6 +31,13 @@ export class Tab2Page implements OnInit {
     this.initializeContainer();
   }
 
+  logout() {
+    this.authService.logout().then(() => {
+      this.router.navigate(['/login']); // Redirect to login page
+    }).catch(error => {
+      console.error('Logout failed:', error);
+    });
+  }
   initializeSliderContainer() {
     this.service.getTrendingList(this.modelType).subscribe(tredingMoviesEl => {
       tredingMoviesEl.results.forEach(tredingMovies => {

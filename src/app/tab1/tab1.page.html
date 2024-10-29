@@ -1,11 +1,20 @@
-<ion-header style="background-color:black;">
-  <ion-toolbar style="align-self: center;">
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-img style="width: 48px; height: 48px; align-items: center;" src="../../assets/icon/netflix.png"></ion-img>
 
-      <ion-img style="width: 48px; height: 48px; align-items: center;" src="../../assets/icon/netflix.png"></ion-img>
+    <ion-title>
+      Movies
+    </ion-title>
 
-
+    <!-- Logout Button with Icon -->
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon style="color: #b82b2b;" name="log-out-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content>
   <ion-list>

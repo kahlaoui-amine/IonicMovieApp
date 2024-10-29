@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { forkJoin } from 'rxjs';
 import { ThemoviedbService } from '../projects/api/service/themoviedb.service';
-
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service'; // Update path as necessary
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -14,7 +15,7 @@ export class Tab3Page {
   searchCardContainer: any = [];
   loadingCurrentEventData: any;
 
-  constructor(private service: ThemoviedbService) {
+  constructor(private service: ThemoviedbService,private authService: AuthService, private router: Router) {
     this.searchValue = '';
     this.selectedValue = 'movie';
   }
@@ -30,6 +31,13 @@ export class Tab3Page {
 
   }
 
+  logout() {
+    this.authService.logout().then(() => {
+      this.router.navigate(['/login']); // Redirect to login page
+    }).catch(error => {
+      console.error('Logout failed:', error);
+    });
+  }
   loadSearchContainer() {
     this.service.getSearchList(this.selectedValue, this.page, this.searchValue).subscribe(searchResponseEl => {
       searchResponseEl.results.forEach(element => {

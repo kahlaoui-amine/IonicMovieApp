@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { forkJoin } from 'rxjs';
 import { ThemoviedbService } from '../projects/api/service/themoviedb.service';
-
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service'; // Update path as necessary
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -17,12 +18,19 @@ export class Tab1Page implements OnInit {
   appCardContainer: any = [];
   loadingCurrentEventData: any;
 
-  constructor(private service: ThemoviedbService) { }
+  constructor(private service: ThemoviedbService,private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.initializeSliderContainer();
     this.initializeGenreContainer();
     this.initializeContainer();
+  }
+  logout() {
+    this.authService.logout().then(() => {
+      this.router.navigate(['/login']); // Redirect to login page
+    }).catch(error => {
+      console.error('Logout failed:', error);
+    });
   }
 
   initializeSliderContainer() {
