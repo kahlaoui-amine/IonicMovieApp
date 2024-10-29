@@ -1,8 +1,9 @@
 <ion-header translucent>
   <ion-toolbar>
     <ion-title>{{title}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="closeModel()">Close</ion-button>
+    <ion-buttons slot="end" (click)="closeModel()">
+      <ion-icon style="color: #b82b2b;" name="close" slot="icon-only"></ion-icon>
+
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -24,20 +25,27 @@
         <h3>{{title}}</h3>
         <ion-buttons slot="primary" (click)="playVideo()" *ngIf="!isVideoEnabled && videoUrl">
           <ion-button color="secondary">
-            <ion-icon style="font-size: 40px;" name="play-circle-outline"></ion-icon>
-            PLAY
+            <ion-icon  style="color: #b82b2b;" name="play-circle-outline"></ion-icon>
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
       <div>
         <ion-toolbar>
           <div class="ion-margin-bottom">
-            <ion-chip color="dark" outline>ReleaseDate: {{releaseDate}}</ion-chip>
-            <ion-chip color="dark" outline>Duration: {{runtime}}</ion-chip>
-            <ion-chip color="dark" outline>{{voterRating}}</ion-chip>
+            <div class="release-date-card">
+              <ion-chip color="white" >Release Date: {{releaseDate}}</ion-chip>
+            </div>
+            <div class="Duration-card">
+              <ion-chip color="white" >Duration: {{runtime}}</ion-chip>
+            </div>
+            <div class="voterRating-card">
+              <ion-chip color="white" >{{voterRating}}</ion-chip>
+            </div>
+
           </div>
         </ion-toolbar>
       </div>
+
       <ion-toolbar>
         <ion-text>{{overview}}</ion-text>
       </ion-toolbar>
@@ -48,7 +56,7 @@
   <div *ngIf="castItemList.length > 0">
     <ion-list>
       <ion-list-header>
-        <h3>Casting</h3>
+        <h3 style="font-size: 18px; color: #b82b2b; text-align: center;">Actors</h3>
       </ion-list-header>
 
       <ion-item *ngFor="let castItem of castItemList">
@@ -66,13 +74,13 @@
     </ion-list>
   </div>
 
-  <div *ngIf="crewItemList.length > 0">
+  <div fixed=true *ngIf="crewItemList.length > 0">
     <ion-list>
       <ion-list-header>
-        <h3>Casting</h3>
+        <h3 style="font-size: 18px; color: #b82b2b; text-align: center;">Crew Members</h3>
       </ion-list-header>
 
-      <ion-item *ngFor="let crewItem of crewItemList">
+      <ion-item *ngFor="let crewItem of crewItemList ">
         <ion-avatar slot="start">
           <img *ngIf="crewItem.profile_path; else personDefaulIcon" src="{{crewItem.profile_path}}">
           <ng-template #personDefaulIcon>
@@ -91,7 +99,7 @@
   <ion-grid fixed=true *ngIf="appRecommendationsContainer.length > 0">
       <ion-list>
         <ion-item>
-          <ion-label style="font-size: 18px;">Recommendations</ion-label>
+          <ion-label style="font-size: 18px; color: #b82b2b; text-align: center;">Recommendations</ion-label>
         </ion-item>
       </ion-list>
     <ion-row>

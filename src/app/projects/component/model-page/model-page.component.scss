@@ -19,3 +19,38 @@
     margin: 0px 15% 0 15%;
   }
 }
+.release-date-card {
+  margin: 1px;
+  border-radius: 10px;
+  background-color: #ff0000; /* Use Ionic's danger color */
+  padding: 2px; /* Add some padding to make it look better */
+  display: inline-block; /* Make the card fit the text */
+
+}
+
+.Duration-card {
+  margin: 1px;
+  border-radius: 10px;
+  background-color: #d00000; /* Use Ionic's danger color */
+  padding: 2px; /* Add some padding to make it look better */
+  display: inline-block; /* Make the card fit the text */
+
+}
+
+.voterRating-card {
+  margin: 1px;
+  border-radius: 10px;
+  background-color: #d73737; /* Use Ionic's danger color */
+  padding: 2px; /* Add some padding to make it look better */
+  display: inline-block; /* Make the card fit the text */
+
+}
+.casting-header-card {
+  margin: 2px;
+  border-radius: 10px;
+  background-color: var(--ion-color-danger); /* Use Ionic's danger color */
+  color: white; /* Set text color to white */
+  text-align: end; /* Center the text */
+  padding: 5px; /* Optional padding for better appearance */
+}
+

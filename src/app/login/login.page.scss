@@ -30,6 +30,9 @@ ion-text{
     margin-bottom: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
 
+    &:active {
+      --background: pink;
+    }
 
     &:focus {
       --box-shadow: none;

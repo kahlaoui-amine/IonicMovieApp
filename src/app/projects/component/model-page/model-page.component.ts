@@ -42,14 +42,14 @@ export class ModelPageComponent implements OnInit {
     this.releaseDate = this.modelItemList.detailResponseEl.release_date;
     this.runtime = this.modelItemList.detailResponseEl.runtime + 'Minutes';
     this.voterRating = 'User Score : ' + (Number(this.modelItemList.vote_average * 10).toFixed(2)) + '%';
-    this.modelItemList.creditsResponseEl.cast.forEach(element => {
+    this.modelItemList.creditsResponseEl.cast.slice(0, 10).forEach(element => {
       if (element.profile_path) {
         element.profile_path = 'https://www.themoviedb.org/t/p/w138_and_h175_face/' + element.profile_path;
       }
       this.castItemList.push(element);
     });
 
-    this.modelItemList.creditsResponseEl.crew.forEach(element => {
+    this.modelItemList.creditsResponseEl.crew.slice(0, 10).forEach(element => {
       if (element.profile_path) {
         element.profile_path = 'https://www.themoviedb.org/t/p/w138_and_h175_face/' + element.profile_path;
       }
