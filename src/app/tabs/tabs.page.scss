@@ -2,8 +2,8 @@
 .floating-card {
   margin: 10px;
   border-radius: 20px;
-  background-color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow to make it appear floating */
+  background-color: #b82b2b;
+  box-shadow: 0 14px 10px rgba(0, 0, 0, 0.2); /* Add a shadow to make it appear floating */
   overflow: hidden; /* To ensure rounded corners work properly */
 }
 
@@ -14,4 +14,10 @@ ion-tab-bar {
   --color-selected: #b82b2b; /* Selected tab button color */
 
 
+}
+ion-tab-button {
+  background: transparent !important; /* Removes the background behind each button */
+  --color: var(--ion-color-dark); /* Adjusts icon color for unselected state */
+  --color-selected: var(--ion-color-white); /* Adjusts icon color for selected state */
+  box-shadow: none; /* Removes any default shadow effect */
 }
